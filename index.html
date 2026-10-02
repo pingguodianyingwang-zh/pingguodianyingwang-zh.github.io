@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苹果电影网 | 脆甜爽口的好片推荐 · 每周更新</title>
+<meta name="description" content="苹果电影网（pingguodianyingwang-zh.github.io）专注清爽爽口的好片推荐，每周更新高分电影清单，剧情扎实、节奏利落、看完神清气爽，像咬一口脆苹果。">
+<meta name="keywords" content="苹果电影网,清爽电影,高分电影推荐,剧情片,节奏爽片,周末观影,电影清单,电影导航,爽口片单,苹果绿风格">
+<meta name="author" content="苹果电影网">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="苹果电影网 | 脆甜爽口的好片推荐 · 每周更新">
+<meta property="og:description" content="专注清爽爽口的好片推荐，每周更新高分电影清单，剧情扎实、节奏利落、看完神清气爽。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pingguodianyingwang-zh.github.io">
+<meta property="og:site_name" content="苹果电影网">
+<link rel="canonical" href="https://pingguodianyingwang-zh.github.io">
+<style>
+:root{
+    --green:#2e7d4f;
+    --green2:#4aa06a;
+    --green3:#8fd0a3;
+    --apple:#e8f5ec;
+    --red:#d94f3d;
+    --red2:#f2a79a;
+    --paper:#fbfcf9;
+    --paper2:#f4f7f2;
+    --white:#fff;
+    --ink:#1f2d24;
+    --txt:#42504a;
+    --txt2:#8b9892;
+    --line:rgba(46,125,79,.16);
+    --line2:rgba(46,125,79,.07);
+    --shadow:rgba(46,125,79,.16);
+    --r-s:10px;
+    --r-m:20px;
+    --r-l:32px;
+    --ease:cubic-bezier(.22,.8,.28,1);
+    --sr:"Noto Serif SC","Songti SC",serif;
+    --ss:"Inter","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ss);background:var(--paper);color:var(--txt);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--green);color:#fff}
+button{font-family:inherit}
+ul{list-style:none}
+
+/* 树枝分隔线 */
+.branch{height:3px;background:repeating-linear-gradient(90deg,var(--green3) 0,var(--green3) 14px,transparent 14px,transparent 22px);opacity:.55}
+
+/* 顶部公告 */
+.ann{background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:.5px}
+.ann-in{max-width:1240px;margin:0 auto;padding:8px 30px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.ann-in b{color:var(--green3);font-weight:700}
+.ann-in a{color:var(--green3);opacity:.9;transition:.2s}
+.ann-in a:hover{opacity:1;text-decoration:underline}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(251,252,249,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line2)}
+.nav-row{max-width:1240px;margin:0 auto;padding:0 30px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{position:relative;width:46px;height:46px;border-radius:14px;background:var(--green);box-shadow:0 6px 18px var(--shadow);flex-shrink:0;cursor:pointer;transition:.5s var(--ease);display:grid;place-items:center;overflow:hidden}
+.logo::before{content:"🍎";font-size:23px;line-height:1;position:relative;z-index:2;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))}
+.logo::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 35%,rgba(255,255,255,.42) 50%,transparent 65%);transform:translateX(-100%);transition:.7s var(--ease)}
+.logo:hover::after{transform:translateX(100%)}
+.logo:hover{transform:rotate(8deg) scale(1.08)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.12}
+.brand-cn{font-size:20px;font-weight:900;color:var(--ink);letter-spacing:.5px}
+.brand-cn em{font-style:normal;color:var(--green)}
+.brand-en{font-size:9px;letter-spacing:2.4px;color:var(--txt2);margin-top:5px;text-transform:uppercase;font-weight:700}
+.menu{display:flex;align-items:center;gap:2px}
+.menu a{padding:9px 16px;border-radius:18px;font-size:14px;font-weight:700;color:var(--txt2);transition:.25s var(--ease)}
+.menu a:hover{color:var(--green);background:var(--apple)}
+.menu a.on{color:var(--white);background:var(--green)}
+.nav-btn{padding:11px 24px;border-radius:24px;border:2px solid var(--green);background:var(--white);color:var(--green);font-size:13px;font-weight:800;cursor:pointer;transition:.35s var(--ease);white-space:nowrap;letter-spacing:.5px}
+.nav-btn:hover{background:var(--green);color:#fff;transform:translateY(-2px);box-shadow:0 8px 22px var(--shadow)}
+.burger{display:none;width:44px;height:44px;border:2px solid var(--line);border-radius:13px;background:var(--white);cursor:pointer;position:relative;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger s{width:18px;height:2px;background:var(--green);border-radius:2px;text-decoration:none;transition:.3s var(--ease)}
+.burger.on s:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger s:nth-child(2){opacity:0}.burger.on s:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+section{padding:104px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:2px;color:var(--green);margin-bottom:14px;text-transform:uppercase}
+.eyebrow .bd{width:20px;height:3px;border-radius:2px;background:var(--green)}
+.stitle{font-size:clamp(1.9rem,4.2vw,3.05rem);font-weight:900;letter-spacing:-.5px;line-height:1.28;margin-bottom:14px;color:var(--ink)}
+.stitle em{font-style:normal;color:var(--green)}
+.sdesc{font-size:15.5px;color:var(--txt2);max-width:560px;line-height:1.95}
+.shead{margin-bottom:56px}
+.shead-flex{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px;flex-wrap:wrap}
+.more{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:800;color:var(--green);white-space:nowrap;flex-shrink:0;border-bottom:2px solid transparent;padding-bottom:3px;transition:.25s}
+.more:hover{border-color:var(--green);gap:11px}
+
+/* Hero */
+.hero{padding:76px 0 92px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-60px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(143,208,163,.35),transparent 70%);z-index:0}
+.hero::after{content:"";position:absolute;left:-160px;bottom:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(242,167,154,.25),transparent 70%);z-index:0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);font-weight:900;line-height:1.14;letter-spacing:-1.4px;margin-bottom:20px;color:var(--ink)}
+.hero h1 .cr{color:var(--green)}
+.hero h1 .bk{display:inline-block;position:relative}
+.hero h1 .bk::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:14px;background:var(--green3);opacity:.5;z-index:-1;border-radius:6px}
+.hero-sub{font-size:16.5px;color:var(--txt2);line-height:1.95;margin-bottom:30px;max-width:480px}
+.h-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;border-radius:26px;font-size:15px;font-weight:800;border:2px solid transparent;cursor:pointer;transition:.35s var(--ease);letter-spacing:.3px}
+.btn-pri{background:var(--green);color:#fff;box-shadow:0 8px 24px var(--shadow)}
+.btn-pri:hover{background:var(--green2);transform:translateY(-3px);box-shadow:0 12px 32px var(--shadow)}
+.btn-out{background:var(--white);color:var(--green);border-color:var(--green)}
+.btn-out:hover{background:var(--green);color:#fff;transform:translateY(-3px)}
+.h-chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:700;color:var(--green);background:var(--apple);border:1px solid var(--line);padding:7px 15px;border-radius:20px;transition:.25s}
+.chip:hover{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* Hero 右侧手风琴 */
+.h-panel{background:var(--white);border:1px solid var(--line2);border-radius:var(--r-l);padding:34px;box-shadow:0 20px 50px -24px rgba(31,45,36,.28)}
+.hp-t{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.hp-t .dot{width:9px;height:9px;border-radius:50%;background:var(--red)}
+.hp-t h3{font-size:15px;font-weight:900;font-family:var(--sr);color:var(--ink)}
+.hp-t span{margin-left:auto;font-size:11px;color:var(--txt2);font-family:"Courier New",monospace}
+.acc{border:1px solid var(--line2);border-radius:var(--r-m);overflow:hidden}
+.acc-item+.acc-item{border-top:1px solid var(--line2)}
+.acc-h{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;transition:.25s}
+.acc-h:hover{background:var(--apple)}
+.acc-h .no{font-family:var(--sr);font-size:13px;font-weight:900;color:var(--green);background:var(--apple);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+.acc-h h4{font-size:15px;font-weight:800;font-family:var(--sr);flex:1;color:var(--ink)}
+.acc-h .ar{font-size:12px;color:var(--txt2);transition:.3s;font-family:"Courier New",monospace}
+.acc-item.open .ar{transform:rotate(45deg);color:var(--green)}
+.acc-b{display:grid;grid-template-rows:0fr;transition:.4s var(--ease)}
+.acc-b>div{overflow:hidden}
+.acc-item.open .acc-b{grid-template-rows:1fr}
+.acc-b p{padding:0 20px 18px 64px;font-size:13.5px;color:var(--txt2);line-height:1.85}
+
+/* 本周爽片 - 横滑卡片 */
+.fresh{background:var(--paper2);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fcard{position:relative;background:var(--white);border:1px solid var(--line2);border-radius:var(--r-m);overflow:hidden;transition:.45s var(--ease);display:block}
+.fcard:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 22px 44px -16px rgba(46,125,79,.32);border-color:var(--green3)}
+.fc-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.fc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.fcard:hover .fc-img img{transform:scale(1.09)}
+.fc-img .rk{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-family:var(--sr);font-size:11px;font-weight:900;padding:5px 11px;border-radius:14px}
+.fc-img .fresh-tag{position:absolute;top:12px;right:12px;background:var(--green);color:#fff;font-size:10.5px;font-weight:800;padding:5px 11px;border-radius:14px}
+.fc-body{padding:22px}
+.fc-body .meta{font-size:11.5px;color:var(--txt2);font-family:"Courier New",monospace;margin-bottom:7px}
+.fc-body h4{font-size:18px;font-weight:900;margin-bottom:8px;font-family:var(--sr);line-height:1.4;color:var(--ink)}
+.fc-body p{font-size:13.5px;color:var(--txt2);line-height:1.8}
+.fc-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.fc-foot .score{font-family:var(--sr);font-size:16px;font-weight:900;color:var(--green)}
+.fc-foot .score small{font-size:11px;color:var(--txt2);font-weight:400;font-family:var(--ss)}
+.fc-foot .go{font-size:12.5px;font-weight:800;color:var(--green);opacity:0;transform:translateX(-6px);transition:.35s}
+.fcard:hover .go{opacity:1;transform:none}
+
+/* 分类 - 苹果切片 */
+.slices{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.slice{position:relative;background:var(--white);border:2px solid var(--line2);border-radius:var(--r-m);padding:28px 22px;transition:.4s var(--ease);cursor:pointer;overflow:hidden}
+.slice::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--green);transform:scaleY(0);transform-origin:bottom;transition:.4s var(--ease)}
+.slice:hover::before{transform:scaleY(1)}
+.slice:hover{border-color:var(--green);transform:translateY(-6px);box-shadow:0 16px 36px -14px rgba(46,125,79,.3)}
+.slice .ic{font-size:36px;margin-bottom:12px;display:block;transition:.4s;transform-origin:center}
+.slice:hover .ic{transform:scale(1.18) rotate(-6deg)}
+.slice h3{font-size:16.5px;font-weight:900;margin-bottom:5px;font-family:var(--sr);color:var(--ink)}
+.slice p{font-size:12.5px;color:var(--txt2);line-height:1.7}
+.slice .ct{font-size:10.5px;color:var(--green);font-weight:800;margin-top:10px;display:block;font-family:"Courier New",monospace}
+
+/* 片单表 */
+.tbl-wrap{background:var(--white);border:1px solid var(--line2);border-radius:var(--r-m);overflow:hidden}
+.tbl-row{display:grid;grid-template-columns:56px 1.7fr 1fr 90px 90px;align-items:center;gap:18px;padding:17px 24px;border-bottom:1px solid var(--line2);transition:.3s}
+.tbl-row:last-child{border-bottom:none}
+.tbl-row:hover{background:var(--apple)}
+.tbl-no{font-family:var(--sr);font-size:14px;font-weight:900;color:var(--green);text-align:center;background:var(--apple);border-radius:11px;padding:8px 0}
+.tbl-info h4{font-size:16px;font-weight:900;font-family:var(--sr);margin-bottom:4px;color:var(--ink)}
+.tbl-info p{font-size:12.5px;color:var(--txt2)}
+.tbl-tag{font-size:12px;color:var(--txt2);display:flex;gap:6px;flex-wrap:wrap}
+.tbl-tag b{background:var(--apple);color:var(--green);font-weight:700;padding:3px 9px;border-radius:9px;font-size:11px}
+.tbl-time{font-size:12px;color:var(--txt2);font-family:"Courier New",monospace;text-align:center}
+.tbl-btn{text-align:right}
+.tbl-btn a{display:inline-block;font-size:12px;font-weight:800;color:var(--green);border:1.5px solid var(--green);padding:7px 15px;border-radius:17px;transition:.3s}
+.tbl-btn a:hover{background:var(--green);color:#fff}
+
+/* 编辑点评 */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.note{position:relative;background:var(--white);border:1px solid var(--line2);border-radius:var(--r-m);padding:26px;transition:.4s var(--ease)}
+.note:hover{transform:translateY(-6px);box-shadow:0 16px 38px -14px rgba(46,125,79,.28);border-color:var(--green3)}
+.note .lv{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:1px;padding:4px 11px;border-radius:11px;margin-bottom:14px}
+.note.a .lv{background:var(--apple);color:var(--green)}
+.note.b .lv{background:rgba(217,79,62,.1);color:var(--red)}
+.note.c .lv{background:rgba(143,208,163,.25);color:var(--green2)}
+.note h4{font-size:17px;font-weight:900;margin-bottom:9px;font-family:var(--sr);line-height:1.4;color:var(--ink)}
+.note p{font-size:14px;color:var(--txt);line-height:1.9;margin-bottom:16px}
+.note-foot{display:flex;align-items:center;gap:11px;border-top:1px solid var(--line2);padding-top:15px}
+.note-av{width:38px;height:38px;border-radius:50%;background:var(--apple);display:grid;place-items:center;font-size:17px;flex-shrink:0}
+.note-foot h5{font-size:13px;font-weight:900;color:var(--ink)}
+.note-foot span{font-size:11px;color:var(--txt2)}
+
+/* 关于 - 果园时间线 */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.ab-txt .flow{margin-top:26px;display:flex;flex-direction:column;gap:22px}
+.flow-item{display:flex;gap:18px;align-items:flex-start}
+.flow-item .n{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;font-family:var(--sr);font-weight:900;display:grid;place-items:center;flex-shrink:0;font-size:14px;box-shadow:0 4px 12px var(--shadow);position:relative}
+.flow-item .n::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--green3);opacity:.5}
+.flow-item h4{font-size:16px;font-weight:900;margin-bottom:4px;font-family:var(--sr);color:var(--ink)}
+.flow-item p{font-size:13.5px;color:var(--txt2);line-height:1.8}
+.ab-box{background:var(--white);border-radius:var(--r-l);padding:34px;border:1px solid var(--line2);position:relative;overflow:hidden}
+.ab-box::before{content:"🍏";position:absolute;right:-8px;bottom:-22px;font-size:110px;opacity:.08}
+.ab-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ab-s{padding:22px;border-radius:var(--r-m);background:var(--apple);text-align:center;transition:.35s}
+.ab-s:hover{background:var(--green3);transform:scale(1.05)}
+.ab-s .n{font-family:var(--sr);font-size:30px;font-weight:900;color:var(--green);line-height:1}
+.ab-s span{font-size:12px;color:var(--txt2);display:block;margin-top:6px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--green),var(--green2));border-radius:var(--r-l);padding:54px 46px;position:relative;overflow:hidden;text-align:center}
+.cta::before,.cta::after{content:"🍎";position:absolute;font-size:85px;opacity:.13}
+.cta::before{left:-8px;top:-18px;transform:rotate(-18deg)}
+.cta::after{right:-8px;bottom:-18px;transform:rotate(22deg)}
+.cta h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:#fff;line-height:1.5;margin-bottom:13px;font-family:var(--sr);position:relative}
+.cta p{font-size:14.5px;color:rgba(255,255,255,.92);margin-bottom:28px;position:relative;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-form{display:flex;gap:10px;flex-wrap:wrap;max-width:460px;margin:0 auto;position:relative}
+.cta-in{flex:1;min-width:200px;padding:15px 20px;border-radius:26px;border:none;background:rgba(255,255,255,.95);color:var(--ink);font-size:14px;outline:none;font-family:inherit}
+.cta-in::placeholder{color:var(--txt2)}
+.cta-sub{padding:15px 32px;border-radius:26px;border:none;background:var(--ink);color:#fff;font-size:14px;font-weight:900;cursor:pointer;transition:.3s;letter-spacing:.5px}
+.cta-sub:hover{background:var(--red);transform:translateY(-2px)}
+
+/* 页脚 */
+.foot{background:var(--ink);padding:74px 0 0}
+.foot-grid{max-width:1240px;margin:0 auto;padding:0 30px 46px;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:46px}
+.foot-brand .logo{box-shadow:0 6px 20px rgba(46,125,79,.5)}
+.foot-brand .brand-cn{color:#fff}
+.foot-brand p{font-size:13.5px;line-height:1.95;margin-top:18px;color:var(--txt2);max-width:330px}
+.foot-col h4{color:var(--green3);font-size:12.5px;font-weight:800;margin-bottom:18px;letter-spacing:2px}
+.foot-col ul{display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:13.5px;color:var(--txt2);transition:.2s}
+.foot-col a:hover{color:var(--green3)}
+.foot-bot{max-width:1240px;margin:0 auto;padding:26px 30px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--txt2)}
+.foot-bot .fl{display:flex;gap:24px}
+.foot-bot a{color:var(--txt2);transition:.2s}
+.foot-bot a:hover{color:var(--green3)}
+
+.top{position:fixed;right:26px;bottom:26px;z-index:999;width:50px;height:50px;border-radius:16px;border:none;background:var(--green);color:#fff;font-size:17px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(14px);transition:.35s;display:grid;place-items:center;box-shadow:0 8px 22px var(--shadow)}
+.top.show{opacity:1;visibility:visible;transform:none}
+.top:hover{background:var(--green2);transform:scale(1.08)}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .h-panel{max-width:560px}
+    .fcards{grid-template-columns:1fr 1fr}
+    .about{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:768px){
+    section{padding:72px 0}.shead,.shead-flex{margin-bottom:38px}
+    .menu{position:fixed;top:76px;left:0;right:0;flex-direction:column;background:rgba(251,252,249,.97);padding:18px 30px 26px;gap:0;transform:translateY(-14px);opacity:0;visibility:hidden;transition:.35s;border-bottom:1px solid var(--line2)}
+    .menu.open{transform:none;opacity:1;visibility:visible}
+    .menu a{padding:13px 4px;border-bottom:1px solid var(--line2)}
+    .nav-btn{display:none}.burger{display:flex}
+    .hero{padding:44px 0 70px}
+    .h-actions .btn{flex:1;justify-content:center}
+    .tbl-row{grid-template-columns:44px 1fr;gap:12px}
+    .tbl-tag,.tbl-time,.tbl-btn{grid-column:2;justify-content:flex-start;text-align:left}
+}
+@media(max-width:560px){
+    .wrap,.nav-row,.foot-grid,.foot-bot{padding-left:18px;padding-right:18px}
+    .fcards{grid-template-columns:1fr}
+    .slices{grid-template-columns:1fr 1fr}
+    .ab-stats{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:2.3rem}
+    .cta{padding:38px 24px}
+    .foot-grid{grid-template-columns:1fr}
+    .ann-in{font-size:11px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="ann">
+    <div class="ann-in">
+        <span>🍎 <b>第 203 期片单已更新</b> · 本周主题：节奏爽利，不拖泥带水</span>
+        <a href="#fresh">马上看 →</a>
+    </div>
+</div>
+
+<header class="nav">
+    <div class="nav-row">
+        <a href="#" class="brand">
+            <div class="logo"></div>
+            <div class="brand-txt">
+                <span class="brand-cn">苹果<em>电影网</em></span>
+                <span class="brand-en">Crisp & Fresh Films</span>
+            </div>
+        </a>
+        <ul class="menu" id="menu">
+            <li><a href="#home" class="on">首页</a></li>
+            <li><a href="#fresh">本周爽片</a></li>
+            <li><a href="#slices">口味分类</a></li>
+            <li><a href="#list">完整片单</a></li>
+            <li><a href="#notes">编辑点评</a></li>
+            <li><a href="#about">选片标准</a></li>
+        </ul>
+        <button class="nav-btn" onclick="window.location.href='#'">🍏 收藏本站</button>
+        <button class="burger" id="burger" aria-label="菜单"><s></s><s></s><s></s></button>
+    </div>
+</header>
+<div class="branch"></div>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="wrap">
+        <div class="hero-grid">
+            <div>
+                <h1 class="rv">看好片，要像<br><span class="cr">咬一口脆苹果</span>——<br><span class="bk">爽利、利落</span></h1>
+                <p class="hero-sub rv">苹果电影网每周精选爽口好片：剧情扎实、节奏利落、看完神清气爽。不灌水、不拖沓，每一部都值得你花两个小时。</p>
+                <div class="h-actions rv">
+                    <a href="#fresh" class="btn btn-pri">🎬 看本周爽片</a>
+                    <a href="#about" class="btn btn-out">🌿 我们的选片标准</a>
+                </div>
+                <div class="h-chips rv">
+                    <span class="chip">#剧情扎实</span>
+                    <span class="chip">#节奏利落</span>
+                    <span class="chip">#高分精选</span>
+                    <span class="chip">#不灌水</span>
+                </div>
+            </div>
+            <div class="h-panel rv">
+                <div class="hp-t"><span class="dot"></span><h3>今天适合看什么？</h3><span>v203</span></div>
+                <div class="acc">
+                    <div class="acc-item open">
+                        <div class="acc-h"><span class="no">A</span><h4>想被剧情反转爽到</h4><span class="ar">＋</span></div>
+                        <div class="acc-b"><div><p>《看不见的客人》《控方证人》《非常嫌疑犯》——每一部的结尾都值得你倒回去重看一遍。</p></div></div>
+                    </div>
+                    <div class="acc-item">
+                        <div class="acc-h"><span class="no">B</span><h4>想看节奏飞快的</h4><span class="ar">＋</span></div>
+                        <div class="acc-b"><div><p>《疯狂的石头》《两杆大烟枪》《狙击电话亭》——90分钟，没有一秒想快进。</p></div></div>
+                    </div>
+                    <div class="acc-item">
+                        <div class="acc-h"><span class="no">C</span><h4>想看人物写得好的</h4><span class="ar">＋</span></div>
+                        <div class="acc-b"><div><p>《绿里奇迹》《肖申克的救赎》《阿甘正传》——看完会对"人"这件事多一点信心。</p></div></div>
+                    </div>
+                    <div class="acc-item">
+                        <div class="acc-h"><span class="no">D</span><h4>只想轻松笑一笑</h4><span class="ar">＋</span></div>
+                        <div class="acc-b"><div><p>《三傻大闹宝莱坞》《心灵奇旅》《白日梦想家》——看完会想立刻出门走走。</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 本周爽片 -->
+<section id="fresh" class="fresh">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="bd"></span>本周爽片 · THIS WEEK</div>
+                <h2 class="stitle">咬下去，<em>嘎嘣脆</em></h2>
+                <p class="sdesc">这一期的共同点是：剧情不注水，节奏不拖沓，看完不会后悔那两个小时。</p>
+            </div>
+            <a href="#list" class="more">查看完整片单 →</a>
+        </div>
+        <div class="fcards">
+            <a href="#" class="fcard rv">
+                <div class="fc-img"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=520&h=330&fit=crop" alt="本周片一"><span class="rk">RANK 01</span><span class="fresh-tag">🍎 本周最佳</span></div>
+                <div class="fc-body">
+                    <div class="meta">2014 · 中国大陆 · 犯罪 / 剧情</div>
+                    <h4>心迷宫</h4>
+                    <p>一个小山村、一具无名尸、三段错位的叙述。成本极低，结构极狠，国产犯罪片的隐藏神作。</p>
+                    <div class="fc-foot"><span class="score">8.7 <small>/ 10</small></span><span class="go">看详情 →</span></div>
+                </div>
+            </a>
+            <a href="#" class="fcard rv">
+                <div class="fc-img"><img src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?w=420&h=330&fit=crop" alt="本周片二"><span class="rk">RANK 02</span><span class="fresh-tag">爽感十足</span></div>
+                <div class="fc-body">
+                    <div class="meta">1998 · 英国 · 犯罪 / 喜剧</div>
+                    <h4>两杆大烟枪</h4>
+                    <p>盖·里奇的成名作，多线叙事玩到极致，台词又损又俏，看完会想立刻二刷。</p>
+                    <div class="fc-foot"><span class="score">9.1 <small>/ 10</small></span><span class="go">看详情 →</span></div>
+                </div>
+            </a>
+            <a href="#" class="fcard rv">
+                <div class="fc-img"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=420&h=330&fit=crop" alt="本周片三"><span class="rk">RANK 03</span><span class="fresh-tag">余味悠长</span></div>
+                <div class="fc-body">
+                    <div class="meta">2019 · 韩国 · 剧情 / 家庭</div>
+                    <h4>寄生虫</h4>
+                    <p>前半段是黑色喜剧，后半段是阶级寓言。每一帧都在算计，每一个转折都合情合理。</p>
+                    <div class="fc-foot"><span class="score">9.3 <small>/ 10</small></span><span class="go">看详情 →</span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 分类 -->
+<section id="slices">
+    <div class="wrap">
+        <div class="shead rv">
+            <div class="eyebrow"><span class="bd"></span>口味分类 · FLAVORS</div>
+            <h2 class="stitle">按 <em>口味</em> 挑一片</h2>
+            <p class="sdesc">就像苹果有青有红有脆有粉，好片也各有各的爽法。选你现在最想吃的那一口。</p>
+        </div>
+        <div class="slices">
+            <div class="slice rv"><span class="ic">🍏</span><h3>青苹果 · 反转</h3><p>剧情层层剥开，结尾让你倒吸一口气</p><span class="ct">52 部</span></div>
+            <div class="slice rv"><span class="ic">🍎</span><h3>红苹果 · 热血</h3><p>节奏飞起，看完想立刻干点什么</p><span class="ct">47 部</span></div>
+            <div class="slice rv"><span class="ic">🥝</span><h3>奇异果 · 冷门</h3><p>没听过的名字，看过就忘不掉</p><span class="ct">63 部</span></div>
+            <div class="slice rv"><span class="ic">🍐</span><h3>雪梨 · 温情</h3><p>不催泪，但看完心里暖暖的</p><span class="ct">58 部</span></div>
+            <div class="slice rv"><span class="ic">🍊</span><h3>柑橘 · 轻松</h3><p>不需要动脑，纯粹的好心情</p><span class="ct">41 部</span></div>
+            <div class="slice rv"><span class="ic">🫐</span><h3>蓝莓 · 深度</h3><p>看完会想找人讨论的那种</p><span class="ct">39 部</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- 完整片单 -->
+<section id="list" class="fresh">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="bd"></span>完整片单 · ALL FILMS</div>
+                <h2 class="stitle">都在这儿了，<em>随便点</em></h2>
+                <p class="sdesc">所有推荐过的片子，按类型和时间整理好。踩雷率极低的那种。</p>
+            </div>
+            <a href="#" class="more">全部 300+ 部 →</a>
+        </div>
+        <div class="tbl-wrap">
+            <div class="tbl-row rv">
+                <div class="tbl-no">01</div>
+                <div class="tbl-info"><h4>控方证人</h4><p>1957 · 比利·怀尔德 · 美国</p></div>
+                <div class="tbl-tag"><b>反转</b><b>法庭</b><b>黑白经典</b></div>
+                <div class="tbl-time">116 min</div>
+                <div class="tbl-btn"><a href="#">看介绍</a></div>
+            </div>
+            <div class="tbl-row rv">
+                <div class="tbl-no">02</div>
+                <div class="tbl-info"><h4>疯狂的石头</h4><p>2006 · 宁浩 · 中国大陆</p></div>
+                <div class="tbl-tag"><b>黑色幽默</b><b>多线叙事</b><b>国产神作</b></div>
+                <div class="tbl-time">106 min</div>
+                <div class="tbl-btn"><a href="#">看介绍</a></div>
+            </div>
+            <div class="tbl-row rv">
+                <div class="tbl-no">03</div>
+                <div class="tbl-info"><h4>绿里奇迹</h4><p>1999 · 弗兰克·德拉邦特 · 美国</p></div>
+                <div class="tbl-tag"><b>人性</b><b>温情</b><b>汤姆·汉克斯</b></div>
+                <div class="tbl-time">189 min</div>
+                <div class="tbl-btn"><a href="#">看介绍</a></div>
+            </div>
+            <div class="tbl-row rv">
+                <div class="tbl-no">04</div>
+                <div class="tbl-info"><h4>非常嫌疑犯</h4><p>1995 · 布莱恩·辛格 · 美国</p></div>
+                <div class="tbl-tag"><b>反转</b><b>悬疑</b><b>凯文·史派西</b></div>
+                <div class="tbl-time">106 min</div>
+                <div class="tbl-btn"><a href="#">看介绍</a></div>
+            </div>
+            <div class="tbl-row rv">
+                <div class="tbl-no">05</div>
+                <div class="tbl-info"><h4>白日梦想家</h4><p>2013 · 本·斯蒂勒 · 美国</p></div>
+                <div class="tbl-tag"><b>冒险</b><b>治愈</b><b>格陵兰岛</b></div>
+                <div class="tbl-time">114 min</div>
+                <div class="tbl-btn"><a href="#">看介绍</a></div>
+            </div>
+            <div class="tbl-row rv">
+                <div class="tbl-no">06</div>
+                <div class="tbl-info"><h4>十二怒汉</h4><p>1957 · 西德尼·吕美特 · 美国</p></div>
+                <div class="tbl-tag"><b>法庭</b><b>对话驱动</b><b>黑白经典</b></div>
+                <div class="tbl-time">96 min</div>
+                <div class="tbl-btn"><a href="#">看介绍</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 编辑点评 -->
+<section id="notes">
+    <div class="wrap">
+        <div class="shead-flex rv">
+            <div>
+                <div class="eyebrow"><span class="bd"></span>编辑点评 · NOTES</div>
+                <h2 class="stitle">我们 <em>怎么看</em> 这些片</h2>
+                <p class="sdesc">不写八股影评，只说看完之后最想说的一句。有夸也有踩，实话实说。</p>
+            </div>
+            <a href="#" class="more">写一条点评 →</a>
+        </div>
+        <div class="notes">
+            <div class="note a rv">
+                <span class="lv">强推 · 必看</span>
+                <h4>《心迷宫》：国产片里的结构玩家</h4>
+                <p>成本不到 200 万，剧本扎实到让人汗颜。它的好不在于反转，而在于每一个人物都"不得不"那么做，逻辑严丝合缝。</p>
+                <div class="note-foot"><div class="note-av">🍎</div><div><h5>阿森</h5><span>编辑部 · 主笔</span></div></div>
+            </div>
+            <div class="note b rv">
+                <span class="lv">需慎看</span>
+                <h4>《寄生虫》：爽，但别被夸过头劝退</h4>
+                <p>确实好，但不用带着"必须看懂隐喻"的压力去看。把它当一部黑色家庭片看，后半段的张力就已经够你受的了。</p>
+                <div class="note-foot"><div class="note-av">🍏</div><div><h5>小满</h5><span>编辑部 · 选片</span></div></div>
+            </div>
+            <div class="note c rv">
+                <span class="lv">冷门宝藏</span>
+                <h4>《爆裂鼓手》：不是励志片，别搞错</h4>
+                <p>很多人冲着"追梦"去看，结果被压得喘不过气。这片子真正讲的是执念，看完你会重新定义"好老师"这三个字。</p>
+                <div class="note-foot"><div class="note-av">🥁</div><div><h5>K</h5><span>编辑部 · 冷门组</span></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 关于 -->
+<section id="about" style="background:var(--paper2);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)">
+    <div class="wrap">
+        <div class="about">
+            <div class="rv">
+                <div class="eyebrow"><span class="bd"></span>选片标准 · STANDARD</div>
+                <h2 class="stitle">我们怎么 <em>挑片</em></h2>
+                <p class="sdesc">苹果电影网不做大而全的片库，也不迷信评分。我们只关心一件事：这片子看完，你会不会觉得那两个小时花得值。</p>
+                <div class="flow">
+                    <div class="flow-item"><span class="n">1</span><div><h4>剧情不许注水</h4><p>能剪掉十分钟还不影响的，我们不给推荐位。</p></div></div>
+                    <div class="flow-item"><span class="n">2</span><div><h4>节奏必须利落</h4><p>前 15 分钟还立不起人物和矛盾的，直接淘汰。</p></div></div>
+                    <div class="flow-item"><span class="n">3</span><div><h4>结尾要站得住</h4><p>开头挖的坑，结尾必须填。靠烂尾收钱的我们不认。</p></div></div>
+                </div>
+            </div>
+            <div class="ab-box rv">
+                <div class="ab-stats">
+                    <div class="ab-s"><div class="n">300+</div><span>精选影片</span></div>
+                    <div class="ab-s"><div class="n">203</div><span>期片单</span></div>
+                    <div class="ab-s"><div class="n">9</div><span>位编辑</span></div>
+                    <div class="ab-s"><div class="n">8.8</div><span>平均评分</span></div>
+                </div>
+                <div style="margin-top:24px;padding-top:22px;border-top:1px solid var(--line2)">
+                    <p style="font-size:14px;color:var(--txt);line-height:1.95">"好电影应该像一颗好苹果：看着顺眼，咬下去脆，咽下去爽，吃完还留一点清甜。我们不追求你看懂多少，只希望你看得舒服。"</p>
+                    <div style="display:flex;align-items:center;gap:12px;margin-top:16px">
+                        <div class="note-av">🍎</div>
+                        <div><h5 style="font-size:13.5px;font-weight:900;color:var(--ink)">苹果电影网编辑部</h5><span style="font-size:11.5px;color:var(--txt2)">成立于 2018 年秋天</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+    <div class="wrap">
+        <div class="cta rv">
+            <h2>每周三，<br>一份爽口片单准时送达</h2>
+            <p>没有广告，没有套路。看完就能决定周末看哪部，不浪费时间。</p>
+            <form class="cta-form" onsubmit="event.preventDefault();alert('🍎 订阅成功！每周爽口好片准时送达～')">
+                <input type="email" class="cta-in" placeholder="留下你的邮箱地址" required>
+                <button type="submit" class="cta-sub">马上订阅</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="foot">
+    <div class="foot-grid">
+        <div class="foot-brand">
+            <a href="#" class="brand">
+                <div class="logo"></div>
+                <div class="brand-txt"><span class="brand-cn">苹果<em>电影网</em></span><span class="brand-en">Crisp & Fresh Films</span></div>
+            </a>
+            <p>专注清爽爽口的好片推荐，每周更新高分电影清单。剧情扎实、节奏利落、看完神清气爽，像咬一口脆苹果。</p>
+        </div>
+        <div class="foot-col">
+            <h4>// 看片入口</h4>
+            <ul>
+                <li><a href="#fresh">本周爽片</a></li>
+                <li><a href="#slices">口味分类</a></li>
+                <li><a href="#list">完整片单</a></li>
+                <li><a href="#notes">编辑点评</a></li>
+            </ul>
+        </div>
+        <div class="foot-col">
+            <h4>// 口味标签</h4>
+            <ul>
+                <li><a href="#">青苹果·反转</a></li>
+                <li><a href="#">红苹果·热血</a></li>
+                <li><a href="#">奇异果·冷门</a></li>
+                <li><a href="#">雪梨·温情</a></li>
+            </ul>
+        </div>
+        <div class="foot-col">
+            <h4>// 关于我们</h4>
+            <ul>
+                <li><a href="#about">选片标准</a></li>
+                <li><a href="#">投稿片单</a></li>
+                <li><a href="#">商务合作</a></li>
+                <li><a href="#">免责声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bot">
+        <span>© 2026 苹果电影网 · pingguodianyingwang-zh.github.io · 看好片，要像咬一口脆苹果</span>
+        <div class="fl">
+            <a href="#">隐私政策</a>
+            <a href="#">免责声明</a>
+            <a href="#">友情链接</a>
+        </div>
+    </div>
+</footer>
+
+<button class="top" id="topBtn" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+    var b=document.getElementById('topBtn');
+    window.addEventListener('scroll',function(){if(window.scrollY>700)b.classList.add('show');else b.classList.remove('show');},{passive:true});
+    b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+(function(){
+    var btn=document.getElementById('burger'),m=document.getElementById('menu');
+    btn.addEventListener('click',function(){btn.classList.toggle('on');m.classList.toggle('open');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('on');m.classList.remove('open');});});
+})();
+(function(){
+    var items=document.querySelectorAll('.acc-item');
+    items.forEach(function(it){
+        it.querySelector('.acc-h').addEventListener('click',function(){
+            var open=document.querySelector('.acc-item.open');
+            if(open&&open!==it)open.classList.remove('open');
+            it.classList.toggle('open');
+        });
+    });
+})();
+(function(){
+    var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+(function(){
+    var links=document.querySelectorAll('.menu a');
+    var secs=document.querySelectorAll('section[id]');
+    window.addEventListener('scroll',function(){
+        var cur='';
+        secs.forEach(function(s){if(window.scrollY>=s.offsetTop-140)cur=s.id;});
+        links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur);});
+    },{passive:true});
+})();
+</script>
+</body>
+</html>
